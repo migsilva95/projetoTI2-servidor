@@ -1,0 +1,60 @@
+﻿@model ProjetoTI2_servidor.Models.Utilizadores
+
+@{
+    ViewBag.Title = "Utilizadores";
+}
+
+<h2>Apagar</h2>
+
+<h3>Quer mesmo apagar este Utilizador?</h3>
+<div>
+
+    <hr />
+    @* HTML Helper para apresentar as mensagens de erro *@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telemovel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telemovel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regressar ao início", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjetoTI2_servidor.Models.Respostas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Nova Resposta", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pergunta.Pergunta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Utilizador.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resposta) @* model => model.Nome ----> expressão Labda*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RespostaCerta)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pergunta.Pergunta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utilizador.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RespostaCerta)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+    }
+
+</table>

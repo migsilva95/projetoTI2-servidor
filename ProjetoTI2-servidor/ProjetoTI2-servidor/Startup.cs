@@ -1,14 +1,22 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using Owin;
+using Microsoft.Owin.Security.Cookies;
 using ProjetoTI2_servidor.Models;
+using Owin;
+using System;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 [assembly: OwinStartupAttribute(typeof(ProjetoTI2_servidor.Startup))]
 namespace ProjetoTI2_servidor
 {
     public partial class Startup
     {
+        /// <summary>
+        /// este método é executado apenas 1 (uma) vez
+        /// quando a aplicação arranca
+        /// </summary>
+        /// <param name="app"></param>
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
@@ -52,10 +60,6 @@ namespace ProjetoTI2_servidor
 
             try
             {
-                //new Utilizadores { Nome = "José Alves", Telemovel = "919191919", Email = "josealves@sapo.pt", Username = "josealves@sapo.pt" }, // professor
-                //new Utilizadores { Nome = "Maria Silva", Telemovel = "919191920", Email = "mariasilva@sapo.pt", Username = "mariasilva@sapo.pt" },  // aluno
-                //new Utilizadores { Nome = "João Lopes", Telemovel = "919191921", Email = "joaolopes@sapo.pt", Username = "joaolopes@sapo.pt" }  // aluno
-
                 // criar um utilizador 'Professor'
                 var user = new ApplicationUser();
                 user.UserName = "josealves@sapo.pt";
@@ -102,6 +106,5 @@ namespace ProjetoTI2_servidor
             { }
         }
         // https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97
-
     }
 }

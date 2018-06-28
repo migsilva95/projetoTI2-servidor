@@ -1,0 +1,36 @@
+﻿@model ProjetoTI2_servidor.Models.Perguntas
+
+@{
+    ViewBag.Title = "Perguntas";
+}
+
+<h2>Apagar</h2>
+
+<h3>Quer mesmo apagar esta Pergunta?</h3>
+<div>
+
+    <hr />
+    @* HTML Helper para apresentar as mensagens de erro *@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pergunta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pergunta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regressar ao início", "Index")
+        </div>
+    }
+</div>

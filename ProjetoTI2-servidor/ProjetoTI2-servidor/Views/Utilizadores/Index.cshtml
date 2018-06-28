@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjetoTI2_servidor.Models.Utilizadores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo Utilizador", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome) @* model => model.Nome ----> expressão Labda*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telemovel) @* model => model.Nome ----> expressão Labda*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email) @* model => model.Nome ----> expressão Labda*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username) @* model => model.Nome ----> expressão Labda*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telemovel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+    }
+
+</table>

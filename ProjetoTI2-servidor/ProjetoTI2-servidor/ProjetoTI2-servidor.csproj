@@ -198,11 +198,19 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PerguntasController.cs" />
+    <Compile Include="Controllers\PlanetasController.cs" />
+    <Compile Include="Controllers\RespostasController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\SistemasController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Controllers\UtilizadoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Perguntas.cs" />
@@ -272,6 +280,40 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Perguntas\Create.cshtml" />
+    <Content Include="Views\Perguntas\Delete.cshtml" />
+    <Content Include="Views\Perguntas\Details.cshtml" />
+    <Content Include="Views\Perguntas\Edit.cshtml" />
+    <Content Include="Views\Perguntas\Index.cshtml" />
+    <Content Include="Views\Planetas\Create.cshtml" />
+    <Content Include="Views\Planetas\Delete.cshtml" />
+    <Content Include="Views\Planetas\Details.cshtml" />
+    <Content Include="Views\Planetas\Edit.cshtml" />
+    <Content Include="Views\Planetas\Index.cshtml" />
+    <Content Include="Views\Respostas\Create.cshtml" />
+    <Content Include="Views\Respostas\Delete.cshtml" />
+    <Content Include="Views\Respostas\Details.cshtml" />
+    <Content Include="Views\Respostas\Edit.cshtml" />
+    <Content Include="Views\Respostas\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\Sistemas\Create.cshtml" />
+    <Content Include="Views\Sistemas\Delete.cshtml" />
+    <Content Include="Views\Sistemas\Edit.cshtml" />
+    <Content Include="Views\Sistemas\Index.cshtml" />
+    <Content Include="Views\UserAdmin\Create.cshtml" />
+    <Content Include="Views\UserAdmin\Delete.cshtml" />
+    <Content Include="Views\UserAdmin\Details.cshtml" />
+    <Content Include="Views\UserAdmin\Edit.cshtml" />
+    <Content Include="Views\UserAdmin\Index.cshtml" />
+    <Content Include="Views\Utilizadores\Create.cshtml" />
+    <Content Include="Views\Utilizadores\Delete.cshtml" />
+    <Content Include="Views\Utilizadores\Details.cshtml" />
+    <Content Include="Views\Utilizadores\Edit.cshtml" />
+    <Content Include="Views\Utilizadores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
