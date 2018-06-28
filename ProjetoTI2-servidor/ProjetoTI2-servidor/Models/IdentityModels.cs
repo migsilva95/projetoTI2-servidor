@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -29,5 +30,25 @@ namespace ProjetoTI2_servidor.Models
         {
             return new ApplicationDbContext();
         }
+
+
+        // descrever os nomes das tabelas na Base de Dados
+        public virtual DbSet<Sistemas> Sistemas { get; set; } // tabela Sistemas
+        public virtual DbSet<Planetas> Planetas { get; set; } // tabela Planetas
+        public virtual DbSet<Perguntas> Perguntas { get; set; } // tabela Perguntas
+        public virtual DbSet<Respostas> Respostas { get; set; } // tabela Respostas
+        public virtual DbSet<Utilizadores> Utilizadores { get; set; } // tabela Utilizadores
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
+
+
+
+
     }
 }

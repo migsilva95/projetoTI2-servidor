@@ -201,9 +201,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Perguntas.cs" />
+    <Compile Include="Models\Planetas.cs" />
+    <Compile Include="Models\Respostas.cs" />
+    <Compile Include="Models\Sistemas.cs" />
+    <Compile Include="Models\Utilizadores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
