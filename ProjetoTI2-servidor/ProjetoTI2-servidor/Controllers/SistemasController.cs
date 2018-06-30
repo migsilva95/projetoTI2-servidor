@@ -20,23 +20,9 @@ namespace ProjetoTI2_servidor.Controllers
 
             // obtém os sistemas de um utilizador
             var sistemas = db.Sistemas
+                .Include(m => m.Utilizador)
                 .ToList();
 
-            return View(sistemas);
-        }
-
-        // GET: Sistemas/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Sistemas sistemas = db.Sistemas.Find(id);
-            if (sistemas == null)
-            {
-                return HttpNotFound();
-            }
             return View(sistemas);
         }
 

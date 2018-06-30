@@ -4,21 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Planetas</h2>
 
 <p>
-    @Html.ActionLink("Criar Novo Planeta", "Create")
+    @if (User.IsInRole("Professor"))
+    {
+        @Html.ActionLink("Criar Novo Planeta", "Create")
+    }
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Sistema.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome) @* model => model.Nome ----> expressão Labda*@
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Fotografia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th></th>
     </tr>
@@ -27,23 +27,20 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Sistema.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
                 @*@Html.DisplayFor(modelItem => item.Fotografia)*@
                 <a href="~/imagens/@item.Fotografia" target="_blank">
                     <img src="~/imagens/@item.Fotografia" width="50" height="37" />
                 </a>
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+                @Html.ActionLink(Html.DisplayFor(x => item.Nome).ToHtmlString(), "Details", new { id = item.ID })
+                @Html.DisplayFor(modelItem => item.Nome)
             </td>
         </tr>
     }
 
 </table>
+
+<div>
+    @Html.ActionLink("Voltar a trás", "Index","Sistemas")
+</div>

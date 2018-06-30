@@ -1,4 +1,4 @@
-namespace ProjetoTI2_servidor.Migrations
+ï»¿namespace ProjetoTI2_servidor.Migrations
 {
     using ProjetoTI2_servidor.Models;
     using System;
@@ -20,9 +20,9 @@ namespace ProjetoTI2_servidor.Migrations
             // adiciona UTILIZADORES
             var utilizadores = new List<Utilizadores>
             {
-                new Utilizadores {Nome="José Alves",  Telemovel="919191919", Email="josealves@sapo.pt",  Username="josealves@sapo.pt"}, // professor
-                new Utilizadores {Nome="Maria Silva", Telemovel="919191920", Email="mariasilva@sapo.pt", Username="mariasilva@sapo.pt"},  // aluno
-                new Utilizadores {Nome="João Lopes",  Telemovel="919191921", Email="joaolopes@sapo.pt",  Username="joaolopes@sapo.pt"}  // aluno
+                new Utilizadores {Nome="JosÃ© Alves",  Telemovel="919191919",  Username="josealves@sapo.pt"}, // professor
+                new Utilizadores {Nome="Maria Silva", Telemovel="919191920", Username="mariasilva@sapo.pt"},  // aluno
+                new Utilizadores {Nome="JoÃ£o Lopes",  Telemovel="919191921", Username="joaolopes@sapo.pt"}  // aluno
             };
             utilizadores.ForEach(uu => context.Utilizadores.AddOrUpdate(u => u.Nome, uu));
             context.SaveChanges();
@@ -38,13 +38,13 @@ namespace ProjetoTI2_servidor.Migrations
             //*********************************************************************
             // adiciona PLANETAS
             var planetas = new List<Planetas> {
-                new Planetas {Nome="Mercúrio",SistemasFK=1},
-                new Planetas {Nome="Vénus",SistemasFK=1},
+                new Planetas {Nome="MercÃºrio",SistemasFK=1},
+                new Planetas {Nome="VÃ©nus",SistemasFK=1},
                 new Planetas {Nome="Terra",SistemasFK=1},
                 new Planetas {Nome="Marte",SistemasFK=1},
-                new Planetas {Nome="Júpiter",SistemasFK=1},
+                new Planetas {Nome="JÃºpiter",SistemasFK=1},
                 new Planetas {Nome="Saturno",SistemasFK=1},
-                new Planetas {Nome="Úrano",SistemasFK=1},
+                new Planetas {Nome="Ãšrano",SistemasFK=1},
                 new Planetas {Nome="Neptuno",SistemasFK=1}
             };
             planetas.ForEach(pp => context.Planetas.AddOrUpdate(p => p.Nome, pp));

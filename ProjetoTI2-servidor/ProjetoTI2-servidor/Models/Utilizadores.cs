@@ -24,9 +24,6 @@ namespace ProjetoTI2_servidor.Models
 
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
         public string Telemovel { get; set; }
-
-        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório!")]
-        public string Email { get; set; }
         
         public string Fotografia { get; set; }
 

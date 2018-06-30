@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Sistemas</h2>
 
 <p>
     @if (User.IsInRole("Professor"))
@@ -24,7 +24,7 @@
     {
     <tr>
         <td>
-            @Html.DisplayFor(x => item.Nome)
+            @Html.ActionLink(Html.DisplayFor(x => item.Nome).ToHtmlString(), "Index", "Planetas")
         </td>
         @if (User.Identity.Name.Equals(item.Utilizador.Username)) {
         <td>
