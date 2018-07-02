@@ -13,11 +13,26 @@
         <dt>
             @Html.DisplayNameFor(model => model.Pergunta)
         </dt>
-
+        @foreach (var item in Model.ListaDeRespostas)
+        {
+            <dt>
+                @if (item.PerguntasFK == Model.ID) {
+                    @Html.DisplayNameFor(modelItem => item.Resposta)
+                }
+            </dt>
+        }
         <dd>
             @Html.DisplayFor(model => model.Pergunta)
         </dd>
-
+        @foreach (var item in Model.ListaDeRespostas)
+        {
+        <dt>
+            @if (item.PerguntasFK == Model.ID)
+            {
+                @Html.DisplayFor(modelItem => item.Resposta)
+            }
+            </dt>
+        }
     </dl>
 </div>
 <p>

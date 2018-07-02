@@ -53,7 +53,7 @@ namespace ProjetoTI2_servidor.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Pergunta,SistemasFK")] Perguntas perguntas)
+        public ActionResult Create([Bind(Include = "ID,Pergunta,UtilizadoresFK")] Perguntas perguntas)
         {
             if (ModelState.IsValid)
             {

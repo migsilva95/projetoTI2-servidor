@@ -15,9 +15,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Fotografia)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th></th>
@@ -25,18 +22,18 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.Fotografia)*@
-                <a href="~/imagens/@item.Fotografia" target="_blank">
-                    <img src="~/imagens/@item.Fotografia" width="50" height="37" />
-                </a>
-            </td>
-            <td>
-                @Html.ActionLink(Html.DisplayFor(x => item.Nome).ToHtmlString(), "Details", new { id = item.ID })
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.ActionLink(Html.DisplayFor(x => item.Nome).ToHtmlString(), "Details", new { id = item.ID })
+        </td>
+        <td>
+            @if (User.Identity.Name.Equals(item.Sistema.Utilizador.Nome))
+            {
+
+                @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+            }
+        </td>
+    </tr>
     }
 
 </table>
